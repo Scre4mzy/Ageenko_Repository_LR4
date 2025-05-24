@@ -4,14 +4,36 @@ using namespace std;
 
 void inputNumber(int &X) {
     // Реализация ввода трехзначного числа X
+    do {
+        cout << "Введите трехзначное число X: ";
+        cin >> X;
+        if (X < 100 || X > 999) {
+            cout << "Ошибка! Число должно быть трехзначным (100-999). Попробуйте снова." << endl;
+        }
+    } while (X < 100 || X > 999);
+    cout << "Число " << X << " успешно сохранено." << endl << endl;
 }
 
 void inputDigit(int &N) {
     // Реализация ввода цифры N
+    do {
+        cout << "Введите цифру N (1-3): ";
+        cin >> N;
+        if (N < 1 || N > 3) {
+            cout << "Ошибка! Цифра N должна быть от 1 до 3. Попробуйте снова." << endl;
+        }
+    } while (N < 1 || N > 3);
+    cout << "Цифра " << N << " успешно сохранена." << endl << endl;
 }
 
 void findFirstDigit(int X) {
     // Реализация поиска первой цифры числа X
+    if (X == 0) {
+        cout << "Сначала введите число X!" << endl << endl;
+        return;
+    }
+    int firstDigit = X / 100;
+    cout << "Первая цифра числа " << X << ": " << firstDigit << endl << endl;
 }
 
 void findNthDigit(int X, int N) {
