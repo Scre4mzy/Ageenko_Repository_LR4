@@ -8,6 +8,14 @@ void inputNumber(int &X) {
 
 void inputDigit(int &N) {
     // Реализация ввода цифры N
+    do {
+        cout << "Введите цифру N (1-3): ";
+        cin >> N;
+        if (N < 1 || N > 3) {
+            cout << "Ошибка! Цифра N должна быть от 1 до 3. Попробуйте снова." << endl;
+        }
+    } while (N < 1 || N > 3);
+    cout << "Цифра " << N << " успешно сохранена." << endl << endl;
 }
 
 void findFirstDigit(int X) {
