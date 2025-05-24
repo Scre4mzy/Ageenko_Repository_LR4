@@ -12,6 +12,12 @@ void inputDigit(int &N) {
 
 void findFirstDigit(int X) {
     // Реализация поиска первой цифры числа X
+    if (X == 0) {
+        cout << "Сначала введите число X!" << endl << endl;
+        return;
+    }
+    int firstDigit = X / 100;
+    cout << "Первая цифра числа " << X << ": " << firstDigit << endl << endl;
 }
 
 void findNthDigit(int X, int N) {
