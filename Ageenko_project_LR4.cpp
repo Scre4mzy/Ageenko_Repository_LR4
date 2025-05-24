@@ -16,6 +16,23 @@ void findFirstDigit(int X) {
 
 void findNthDigit(int X, int N) {
     // Реализация поиска N-й цифры числа X (нумерация справа налево)
+    if (X == 0) {
+        cout << "Сначала введите число X!" << endl << endl;
+        return;
+    }
+    if (N == 0) {
+        cout << "Сначала введите цифру N!" << endl << endl;
+        return;
+    }
+    
+    int digit;
+    switch(N) {
+        case 1: digit = X % 10; break;      // Единицы
+        case 2: digit = (X / 10) % 10; break; // Десятки
+        case 3: digit = X / 100; break;      // Сотни
+    }
+    
+    cout << N << "-я цифра числа " << X << " (справа налево): " << digit << endl << endl;
 }
 
 int main() {
